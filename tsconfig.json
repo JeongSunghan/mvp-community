@@ -3,5 +3,6 @@
     "jsx": "react-jsx",
     "strict": true,
     "noImplicitAny": false
-  }
+  },
+  "extends": "expo/tsconfig.base"
 }
