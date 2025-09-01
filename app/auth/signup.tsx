@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, TextInput, Button, Alert } from "react-native";
-import { useRouter } from "expo-router";
+import { useRouter, Stack } from "expo-router";
 import { signUp } from "../../src/services/user";
 
 export default function SignUp() {
@@ -14,7 +14,8 @@ export default function SignUp() {
     try {
       await signUp(email.trim(), pw, name.trim());
       Alert.alert("가입 완료", "환영합니다!");
-      router.replace("/"); // 이미 로그인된 상태로 홈 이동
+      router.replace("/main"); 
+      
     } catch (e: any) {
       Alert.alert("가입 실패", mapAuthError(e.code, e.message));
     }

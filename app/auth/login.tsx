@@ -13,7 +13,7 @@ export default function Login() {
   const onLogin = async () => {
     try {
       await login(email.trim(), pw);
-      router.replace("/");
+      router.replace("/main");
     } catch (e: any) {
       Alert.alert("로그인 실패", mapAuthError(e.code, e.message));
     }

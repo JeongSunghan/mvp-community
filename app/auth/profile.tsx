@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, Alert } from "react-native";
 import { useAuthState } from "../../src/hooks/useAuthState";
 import { updateDisplayName, removeAccount, reauthenticate, } from "../../src/services/user";
 import { useRouter } from "expo-router";
+import BackBtn from "../../src/components/backBtn";
 
 export default function Profile() {
   const { user } = useAuthState();
@@ -20,6 +21,9 @@ export default function Profile() {
 
   return (
     <View style={{ padding: 16, gap: 12 }}>
+      <BackBtn />
+      <Text style={{ fontWeight: "700", fontSize: 18 }}>내 프로필</Text>
+      <Text>UID: {user.uid}</Text>
       <Text>이메일: {user.email}</Text>
       <TextInput placeholder="표시 이름" value={name} onChangeText={setName} style={{ borderWidth: 1, padding: 8 }} />
       <Button title="이름 변경" onPress={async () => {
@@ -38,7 +42,7 @@ export default function Profile() {
       <Text style={{ fontWeight: "700" }}>계정 삭제</Text>
       <TextInput placeholder="이메일" autoCapitalize="none" value={emailForReauth} onChangeText={setEmailForReauth} style={{ borderWidth: 1, padding: 8 }} />
       <TextInput placeholder="비밀번호" secureTextEntry value={pwForReauth} onChangeText={setPwForReauth} style={{ borderWidth: 1, padding: 8 }} />
-      <Button title="재인증 후 계정 삭제" color="#d11" onPress={async () => {
+      <Button title="계정 삭제" color="#d11" onPress={async () => {
           try {
             await reauthenticate(emailForReauth.trim(), pwForReauth);
             await removeAccount();

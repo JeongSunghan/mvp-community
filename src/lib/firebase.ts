@@ -19,3 +19,6 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const nowTs = () => serverTimestamp();
+
+// 디버그 로그 (앱 실행 시 1회)
+console.log("FB bucket:", firebaseConfig.storageBucket);
