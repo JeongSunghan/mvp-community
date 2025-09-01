@@ -25,7 +25,7 @@ export default function Login() {
         <>
           <Text>로그인됨: {user.email}</Text>
           <Button title="로그아웃" onPress={logout} />
-          <Button title="홈으로" onPress={() => router.replace("/")} />
+          <Button title="홈으로" onPress={() => router.replace("/main")} />
         </>
       ) : (
         <>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FlatList, TouchableOpacity, ListRenderItem } from "react-native";
 import PostCard from "./PostCard";
-import { subscribePosts, Post } from "../../services/posts"; 
+import { subscribePosts, Post } from "../../services/posts";
 
 type Props = {
   onPress: (id: string) => void;
@@ -20,8 +20,8 @@ export default function PostList({ onPress }: Props) {
       <PostCard
         title={item.title ?? ""}
         content={item.content ?? ""}
-        imageCount={Array.isArray(item.imageUrls) ? item.imageUrls.length : 0}
-        commentCount={typeof item.commentCount === "number" ? item.commentCount : 0}
+        commentCount={item.commentCount ?? 0}
+        imageBase64={item.imagesBase64?.[0]} 
       />
     </TouchableOpacity>
   );

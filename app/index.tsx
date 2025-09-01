@@ -1,12 +1,25 @@
 import { View, Text, ActivityIndicator, Button } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { useAuthState } from "../src/hooks/useAuthState";
+import { useEffect } from "react";
 
 import PostList from "../src/components/Post/PostList";
 
 export default function Index() {
   const router = useRouter();
   const { user, initializing } = useAuthState();
+
+//   useEffect(() => {
+//   (async () => {
+//     try {
+//       await storagePing();
+//       await tinyImageUpload();
+//     } catch (e: any) {
+//       console.log("[diag] FAIL:", e?.code, e?.message || e);
+//     }
+//   })();
+// }, []);
+
 
   // 1) 세션 초기화
   if (initializing) {
