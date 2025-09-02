@@ -25,7 +25,7 @@ export default function Index() {
   if (initializing) {
     return (
       <>
-        <Stack.Screen options={{ title: "커뮤니티"}} />
+        <Stack.Screen options={{ title: ""}} />
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 16 }}>
           <ActivityIndicator />
           <Text style={{ marginTop: 8, opacity: 0.7 }}>세션 확인 중…</Text>
@@ -38,8 +38,8 @@ export default function Index() {
   if (!user) {
     return (
       <>
-        <Stack.Screen options={{ title: "커뮤니티", }} />
-        <View style={{ flex: 1, justifyContent: "center", gap: 12, padding: 16 }}>
+        <Stack.Screen options={{ title: "", }} />
+        <View style={{ flex: 1, justifyContent: "center", gap: 12, padding: 16, alignItems: "center" }}>
           <Text style={{ fontSize: 18, fontWeight: "700" }}>MVP Community</Text>
           <Button title="로그인" onPress={() => router.push("/auth/login")} />
           <Button title="회원가입" onPress={() => router.push("/auth/signup")} />
@@ -52,7 +52,7 @@ export default function Index() {
   return (
     <>
     <Button title="홈" onPress={() => router.push("/main")} />
-      <Stack.Screen options={{ title: "커뮤니티",  }} />
+      <Stack.Screen options={{ title: "메인",  }} />
       <View style={{ flex: 1, padding: 12 }}>
         <PostList onPress={(id: string) => router.push(`/post/${id}`)} />
           <Button title="게시글 작성" onPress={() => router.push("/new")} />

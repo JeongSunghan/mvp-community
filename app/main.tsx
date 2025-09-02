@@ -33,7 +33,7 @@ export default function Main() {
       ) : (
         // 비로그인 상태
         <View style={s.center}>
-          <Text style={[s.title, { marginBottom: 12 }]}>MVP Community</Text>
+          <Text style={[s.title, { marginBottom: 12,  }]}>MVP Community</Text>
           <Button title="로그인" onPress={() => router.push("/auth/login")} />
           <View style={{ height: 8 }} />
           <Button title="회원가입" onPress={() => router.push("/auth/signup")} />
@@ -46,6 +46,6 @@ export default function Main() {
 const s = StyleSheet.create({
   center: { flex: 1, alignItems: "center", justifyContent: "center", padding: 16 },
   card: { width: "90%", borderWidth: 1, borderRadius: 10, padding: 16 },
-  title: { fontSize: 18, fontWeight: "700" },
+  title: { fontSize: 18, fontWeight: "700", marginBottom: 6 },
   line: { marginTop: 6 },
 });

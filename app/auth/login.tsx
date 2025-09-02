@@ -23,9 +23,7 @@ export default function Login() {
     <View style={{ padding: 16, gap: 12 }}>
       {user ? (
         <>
-          <Text>로그인됨: {user.email}</Text>
-          <Button title="로그아웃" onPress={logout} />
-          <Button title="홈으로" onPress={() => router.replace("/main")} />
+         
         </>
       ) : (
         <>
